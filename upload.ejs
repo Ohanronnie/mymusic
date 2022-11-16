@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/c46609e39d.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js" ></script>
+  <title>HOME</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/public/asset/home.css">
+  <link rel="stylesheet" href="/public/asset/login.css">
+</head>
+
+<body>
+  <div class="preload">
+      <div id="loader"></div>
+  </div>
+  <div class="div">
+    <div class="aside">
+      <img src="/image.jpg">
+      <label class="label-img">Ronnie <i class="fas fa-angle-down"></i></label>
+      <hr class="hr">
+      <span>Menu</span>
+      <ul>
+        <li>
+          <i class="fas fa-house-chimney"></i>
+          <span>Discover</span>
+        </li>
+        <li>
+          <i class="fa fa-line-chart"></i>
+          <span>Trending</span>
+        </li>
+        <li>
+          <i class="fas fa-house-chimney"></i>
+          <span>Streaming</span>
+        </li>
+        <li>
+          <i class="fas fa-house-chimney"></i>
+          <span>Playlist</span>
+        </li>
+        <li>
+          <i class="fas fa-house-chimney"></i>
+          <span>Bookmark</span>
+        </li>
+      </ul>
+      <hr class="hr hr2">
+      <span>Category</span>
+      <ul>
+        <li>
+          <i class="fas fa-plus"></i>
+          <span>Add music</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-user"></i>
+          <span>View Profile</span>
+        </li>
+        <li>
+          <i class="fa fa-sign-out"></i>
+          <span>Logout</span>
+        </li>
+      </ul>
+      <hr class="hr hr2">
+    </div>
+    <div class="header">
+      <div class="head">
+        <h1>Discover</h1>
+        <span>RECENTLY PLAYED</span>
+       <div class="box">
+ 
+        <div class="recent view-more">
+          <div>
+            <i class="fa fa-folder-open"></i>
+          </div>
+          <p>
+            View recently played
+          </p>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div class="content">
+    <h1>Add music</h1>
+    <hr/>
+    <form action="http://localhost:8080/upload" method="POST" enctype="multipart/form-data">
+      <label for="name">
+        Name of the music&nbsp;
+      </label>
+      <br />
+      <input onfocus="onFoc()" onfocusout="onFocOut()" type="text" name="name" placeholder="name of the music">
+      <br />
+      <label for="artist">
+        Artist&nbsp;
+      </label>
+      <br />
+      <input onfocus="onFoc()" onfocusout="onFocOut()" type="text" name="artist" placeholder="Artist">
+      <br />
+      <label for="description">
+        Description&nbsp;*
+      </label>
+      <br />
+      <input onfocus="onFoc()" onfocusout="onFocOut()" type="text" name="description" placeholder="Description " required>
+      <br />
+      <label for="name">
+        Lyrics
+      </label>
+      <br />
+      <input onfocus="onFoc()" onfocusout="onFocOut()" type="text" name="lyrics" placeholder="lyrics optional">
+      <br /><!--
+      <label for="name">
+        Cover Photo&nbsp;
+      </label>
+
+      <input onchange="" type="file" name="cover" placeholder="name of the music" accept="image/*"/>
+      -->
+      <input onfocus="onFoc()" onfocusout="onFocOut()" type="text" style="display: none" id="metadata" name="metadata">
+      <label for="name">
+        Music&nbsp;*
+      </label>
+      <input type="file" onchange="meta()" name="music" placeholder="name of the music" accept="audio/*">
+      <button type="submit">Submit</button>
+    </form>
+    </div>
+    <div class="main">
+      <span>TOP PODCASTER</span>
+      <hr>
+      <div>
+        <img src="/image.jpg">
+        <i class="fa fa-check-circle"></i>
+        <ul>
+          <li class="name">Tony Smart</li>
+          <li>120,000 followers</li>
+        </ul>
+      </div>
+      <div>
+        <img src="/image.jpg">
+        <i class="fa fa-check-circle"></i>
+        <ul>
+          <li class="name">Tony Smart</li>
+          <li>120,000 followers</li>
+        </ul>
+      </div>
+      <div>
+        <img src="/image.jpg">
+        <i class="fa fa-check-circle"></i>
+        <ul>
+          <li class="name">Tony Smart</li>
+          <li>120,000 followers</li>
+        </ul>
+      </div>
+      <div>
+        <img src="/image.jpg">
+        <i class="fa fa-check-circle"></i>
+        <ul>
+          <li class="name">Tony Smart</li>
+          <li>120,000 followers</li>
+        </ul>
+      </div>
+      <div>
+        <img src="/image.jpg">
+        <i class="fa fa-check-circle"></i>
+        <ul>
+          <li class="name">Tony Smart</li>
+          <li>120,000 followers</li>
+        </ul>
+      </div>
+ 
+    </div>
+    <div class="footer down-remove">
+      <img src="image.jpg" class="img-cover">
+      <ul>
+        <li class="song">Beautiful Mindset in our heart</li>
+        <li class="title-cover">John Doe</li>
+      </ul>
+      <i class="fa backward fa-step-backward" onclick="prevTrack()"></i>
+      <i onclick="playpauseTrack()" id="play"><i class="fa fa-play"></i></i>
+      <i class="fa forward fa-step-forward" onclick="nextTrack()"></i>
+      <span id="hr">00</span>:<span id="min">00</span>
+      <input value="0"  oninput="seekTo()" type="range" class="slider inp">
+      <span id="sec">00</span>:<span id="milli">00</span>
+    </div>
+  </div>
+<!--  <nav>
+    <div class="nav">
+      <a href=""><i class="fa fa-line-chart"></i></a>
+      <a href=""><i class="fas fa-house-chimney"></i></a>
+      <a href=""><i class="fa-solid fa-user"></i></a>
+      <a href=""><i class="fa fa-sign-out"></i></a>
+    </div>
+    <div class="subtitle">
+      <span>Trending</span>
+      <span>Home</span>
+      <span>View Profile</span>
+      <span>Logout</span>
+
+    </div>
+  </nav> -->
+      <nav>
+      <div class="nav">
+        <ul>
+          <li><a href=""><i class="fa home fa-line-chart"></i></a></li>
+          <li><span class="span-trend">TRENDING</span></li>
+        </ul>
+        <ul>
+          <li><a href=""><i class="fas home fa-house-chimney"></i></a></li>
+          <li><span>HOME</span></li>
+        </ul>
+        <ul>
+          <li><a href=""><i class="fa-solid home fa-user"></i></a></li>
+          <li><span>ME</span></li>
+        </ul>
+        <ul>
+          <li><a href=""><i class="fa home fa-sign-out"></i></a></li>
+          <li><span>Logout</span></li>
+        </ul>
+
+  <script>
+  /*  let file = `<%= message %>`;
+    var audio = new Audio(file);
+  myff = () =>{
+    setInterval(() => {
+      var timeRemaining = audio.duration;
+      var seconds = Math.floor(timeRemaining % 60);
+      var hr = Math.floor(audio.duration/60);
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      hr = hr < 10 ? "0" + hr : hr;
+      dur = audio.duration;
+      document.getElementById("hr").innerHTML = hr;
+      document.getElementById("min").innerHTML = seconds;
+     var timeRemaining = audio.duration - audio.currentTime;
+     var sec = Math.floor(timeRemaining / 60)
+     var milli = Math.floor(timeRemaining % 60);
+     if(sec == 0 && milli == 0){
+        audio.play();
+      }
+     sec = sec < 10 ? "0" + sec : sec;
+     milli = milli < 10 ? "0" + milli : milli;
+     document.getElementById("sec").innerHTML=sec;
+     document.getElementById("milli").innerHTML=milli;
+  },1000)
+  audio.play();
+  var change = document.getElementById("play");
+  if(change.getAttribute("class") == "fa play fa-play"){
+  change.setAttribute("class", "fas fa-pause fa play")
+  }
+  else{
+  change.setAttribute("class", "fa play fa-play");
+  audio.pause();
+  }
+  var progress = document.getElementsByTagName('input')[0];
+  progress.max = audio.duration;
+  setInterval(() => {
+  progress.value = audio.currentTime;
+  },1)
+}*/
+  </script>
+<script src="/public/asset/upload.js"></script>
+</body>
+</html>
